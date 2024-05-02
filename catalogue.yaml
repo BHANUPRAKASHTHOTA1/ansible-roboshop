@@ -1,5 +1,6 @@
 - name: Install catalogue components
   hosts: catalogue
+  become: yes
   tasks:
   - name: Run the shell command in Ansible
     ansible.builtin.shell: "curl -sL https://rpm.nodesource.com/setup_lts.x | bash"
@@ -24,7 +25,7 @@
     ansible.builtin.stat:
       path: /app
     register: directory
-    
+
   - name: print the directory stats
     ansible.builtin.debug:
       msg: "output: {{directory}}"
