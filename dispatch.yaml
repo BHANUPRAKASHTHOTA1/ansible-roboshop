@@ -46,7 +46,7 @@
     - "go get"
     - "go build"
     args:
-      chdir: /ap
+      chdir: /app
 
   - name: copy shipping service
     ansible.builtin.copy:
